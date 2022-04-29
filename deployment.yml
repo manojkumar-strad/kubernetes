@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stradsolution
+spec:
+  selector:
+    matchLabels:
+      app: stradsolution
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: stradsolution
+    spec:
+      containers:
+      - name: stradsolution
+        image: manojbhakta/kubernetesproject
+        ports:
+        - containerPort: 80
